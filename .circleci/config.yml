@@ -11,7 +11,7 @@ jobs:
     # like a macOS environment.
     docker:
       # A Docker image is a file used to create a running Docker container.
-      - image: circle/python:3.9
+      - image: circle/python:3.7
     # Your repo has to be checked out somewhere on the build server. The
     # working directory represents the file path where the repo will be stored.
     working_directory: ~/repo
