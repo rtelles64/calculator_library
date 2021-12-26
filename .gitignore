@@ -1,2 +1,5 @@
 .DS_Store
 calculator/
+.coverage
+test_calculator.py
+__pycache__/
