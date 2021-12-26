@@ -21,21 +21,21 @@ jobs:
       - checkout
       # Step 2: Create virtual env and install dependencies
       - run:
-        # The CircleCI UI shows every build step taken from the value
-        # associated with this name key
-        name: install dependencies
-        # Commands are run via shell. The | symbol specifies that what follows
-        # is a literal set of commands, one per line, exactly as you'd see in
-        # a shell script
-        command: |
-          python3 -m venv venv
-          # could also use . venv/bin/activate
-          source venv/bin/activate
-          pip install -r requirements.txt
+          # The CircleCI UI shows every build step taken from the value
+          # associated with this name key
+          name: install dependencies
+          # Commands are run via shell. The | symbol specifies that what follows
+          # is a literal set of commands, one per line, exactly as you'd see in
+          # a shell script
+          command: |
+            python3 -m venv venv
+            # could also use . venv/bin/activate
+            source venv/bin/activate
+            pip install -r requirements.txt
       # Step 3: Run linter and tests
       - run:
-        name: run tests
-        command: |
-          . venv/bin/activate
-          flake8 --exclude=venv* --statistics
-          pytest -v --cov=calculator
+          name: run tests
+          command: |
+            . venv/bin/activate
+            flake8 --exclude=venv* --statistics
+            pytest -v --cov=calculator
